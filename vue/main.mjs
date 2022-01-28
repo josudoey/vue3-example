@@ -1,20 +1,13 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import BootstrapVue3 from 'bootstrap-vue-3'
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue-3/dist/bootstrap-vue-3.css'
+import { createApp } from 'vue'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import routes from './routes.mjs'
 
-// Import Bootstrap an BootstrapVue CSS files (order is important)
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-
-// Make BootstrapVue available throughout your project
-Vue.use(BootstrapVue)
-// Optionally install the BootstrapVue icon components plugin
-Vue.use(IconsPlugin)
-Vue.use(Router)
-
-const router = new Router({
-  mode: 'hash',
+const router = createRouter({
+  history: createWebHashHistory(),
   base: '/',
   linkActiveClass: 'active',
   scrollBehavior (to, from, savedPosition) {
@@ -23,11 +16,10 @@ const router = new Router({
     }
     return { x: 0, y: 0 }
   },
-  routes: routes
+  routes
 })
 
-const vm = window.vm = new Vue({
-  router: router
-})
-
-vm.$mount('#app')
+const app = window.app = createApp({})
+app.use(router)
+app.use(BootstrapVue3)
+app.mount('#app')

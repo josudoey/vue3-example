@@ -1,17 +1,12 @@
-import { render, staticRenderFns } from './render.pug'
+import { render } from './render.pug'
 export default {
   render,
-  staticRenderFns,
+  setup () {},
   data () {
     return {
     }
   },
-  mounted () {
-
-  },
-  updated () {
-  },
-  methods: {
-
-  }
+  mounted () {},
+  updated () {},
+  methods: { }
 }

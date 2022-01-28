@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
 
 const { entry, distPath, publicPath, html } = require('../expose')
 const webpackOutputPath = path.join(distPath, publicPath)
@@ -12,7 +13,7 @@ module.exports = {
   entry: entry,
   resolve: {
     alias: {
-      vue$: 'vue/dist/vue.esm.js'
+      vue$: 'vue/dist/vue.esm-bundler.js'
     }
   },
   output: {
@@ -84,7 +85,7 @@ module.exports = {
     }, {
       test: /render.pug$/,
       use: [{
-        loader: require.resolve('vue-loader/lib/loaders/templateLoader.js'),
+        loader: require.resolve('vue-loader/dist/templateLoader.js'),
         options: {
           minimize: {
             collapseBooleanAttributes: true
@@ -137,6 +138,10 @@ module.exports = {
     }]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      __VUE_OPTIONS_API__: false,
+      __VUE_PROD_DEVTOOLS__: false
+    }),
     new MiniCssExtractPlugin({
       filename: 'css/[contenthash].css',
       chunkFilename: 'css/[contenthash].css'
