@@ -1,5 +1,5 @@
 {
-  "name": "webtool-template",
+  "name": "vue3-example",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/josudoey/webtool-template.git"
+    "url": "git+https://github.com/josudoey/vue3-example.git"
   },
   "author": "Joey Fang",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/josudoey/webtool-template/issues"
+    "url": "https://github.com/josudoey/vue3-example/issues"
   },
-  "homepage": "https://github.com/josudoey/webtool-template#readme",
+  "homepage": "https://github.com/josudoey/vue3-example#readme",
   "devDependencies": {
     "eslint": "^7.12.1",
     "eslint-config-standard": "^16.0.3",
