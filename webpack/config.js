@@ -66,6 +66,24 @@ module.exports = {
   },
   module: {
     rules: [{
+      test: /\.jsx$/,
+      exclude: /node_modules/,
+      use: [{
+        loader: require.resolve('babel-loader'),
+        options: {}
+      }]
+    }, {
+      test: /\.tsx?$/,
+      use: [{
+        loader: require.resolve('ts-loader'),
+        options: {
+          configFile: 'tsconfig.webpack.json'
+        }
+      }, {
+        loader: require.resolve('babel-loader'),
+        options: {}
+      }]
+    }, {
       test: /\.(png|jpe?g|gif|svg)$/,
       type: 'asset/resource',
       generator: {
@@ -138,6 +156,11 @@ module.exports = {
     }]
   },
   plugins: [
+    new webpack.WatchIgnorePlugin({
+      paths: [
+        /\.d\.ts$/
+      ]
+    }),
     new webpack.DefinePlugin({
       __VUE_OPTIONS_API__: false,
       __VUE_PROD_DEVTOOLS__: false

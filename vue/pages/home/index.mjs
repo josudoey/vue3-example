@@ -1,6 +1,10 @@
-import { render } from './render.pug'
+import * as render from './render.pug'
+import ClickCount from '../../components/click-count/index.tsx'
 export default {
-  render,
+  ...render,
+  components:{
+    ClickCount
+  },
   setup () {},
   data () {
     return {

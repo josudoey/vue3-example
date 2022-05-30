@@ -23,6 +23,12 @@
   },
   "homepage": "https://github.com/josudoey/vue3-example#readme",
   "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@popperjs/core": "^2.10.2",
+    "@types/node": "^17.0.36",
+    "@vue/babel-plugin-jsx": "^1.1.1",
+    "babel-loader": "^8.2.5",
+    "bootstrap-vue-3": "^0.1.13",
     "eslint": "^7.12.1",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.25.4",
@@ -30,12 +36,14 @@
     "eslint-plugin-promise": "^5.0.0",
     "esprima": "^4.0.1",
     "gh-pages": "^3.2.3",
-    "jquery": "^3.6.0"
+    "jquery": "^3.6.0",
+    "ts-loader": "^9.3.0",
+    "ts-node": "^10.8.0",
+    "typescript": "^4.7.2"
   },
   "dependencies": {
     "apply-loader": "^2.0.0",
     "bootstrap": "^5.1.3",
-    "bootstrap-vue-3": "^0.1.0",
     "css-loader": "^6.5.1",
     "css-minimizer-webpack-plugin": "^3.4.1",
     "html-loader": "^3.1.0",
