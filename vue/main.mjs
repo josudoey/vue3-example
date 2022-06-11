@@ -10,7 +10,7 @@ const router = createRouter({
   history: createWebHashHistory(),
   base: '/',
   linkActiveClass: 'active',
-  scrollBehavior (to, from, savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition
     }
